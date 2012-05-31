@@ -49,7 +49,7 @@ public class SortOrderComparator {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<? extends Object> sort(final Class<?> clazz,final List<? extends Object> sortList) {
+	public static void sort(final Class<?> clazz,List<? extends Object> sortList) {
 		List<Object> sortOrderList=new ArrayList<Object>();
 		Class inputCalss=void.class;
 		if(sortList!=null && sortList.size()>0){
@@ -62,7 +62,7 @@ public class SortOrderComparator {
 				return compareObject(o1,o2);
 			}
 		});
-		return sortOrderList;
+		sortList=sortOrderList;
 	}
 	
 	/**
