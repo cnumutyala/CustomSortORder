@@ -38,7 +38,7 @@ public class CustomClassTest {
 		}
 		System.out.println("Employee AFTER SORT ORDRE");
 	
-		employees=(List<Employee>) SortOrderComparator.sort(this.getClass(),employees);
+		SortOrderComparator.sort(this.getClass(),employees);
 		
 		for (Employee employee : employees) {
 			System.out.println(employee.getId()+" "+ employee.getName()+" "+employee.getSalary());
@@ -59,7 +59,7 @@ public class CustomClassTest {
 		}
 		System.out.println("Student AFTER SORT ORDRE");
 	
-		students=(List<Student>) SortOrderComparator.sort(this.getClass(),students);
+		SortOrderComparator.sort(this.getClass(),students);
 		
 		for (Student student : students) {
 			System.out.println(student.getStudentId()+" "+ student.getStudentName()+" "+student.getStandard());
@@ -73,7 +73,7 @@ public class CustomClassTest {
 		test.studentSortOrder();
 	}
 	
-	@Sort(sortType=SortTypes.DESC,fieldName="name",sortCalss=Employee.class)
+	@Sort(sortType=SortTypes.DESC,fieldName="salary",sortCalss=Employee.class)
 	public List<Employee> getEmployees() {
 		return employees;
 	}
