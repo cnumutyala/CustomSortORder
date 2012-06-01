@@ -65,6 +65,28 @@ public class SortOrderComparator {
 		return sortOrderList;
 	}
 	
+
+	/**
+	 * return the list of objects with sort order.
+	 * @param clazz
+	 * @param sortList
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<? extends Object> sort(final List<? extends Object> sortList,final String property,final SortTypes sortOrderType) {
+		List<Object> sortOrderList=new ArrayList<Object>();
+		
+		sortOrderList=(List<Object>) sortList;
+		methodName=METHOD_PREFIX+property.substring(0,1).toUpperCase()+property.substring(1);
+		type=sortOrderType;
+		Collections.sort(sortOrderList,new Comparator<Object>(){
+			public int compare(Object o1, Object o2) {
+				return compareObject(o1,o2);
+			}
+		});
+		return sortOrderList;
+	}
+	
 	/**
 	 * get annotation of input list
 	 * 
