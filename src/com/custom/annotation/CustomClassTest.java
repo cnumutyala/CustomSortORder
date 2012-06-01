@@ -23,7 +23,6 @@ public class CustomClassTest {
 	
 	List<Student> students=new ArrayList<Student>();
 
-	@SuppressWarnings("unchecked")
 	public void employeeSortOrder(){
 		Employee e=new Employee(2,"test2",42000);
 		Employee e1=new Employee(1,"test1",50000);
@@ -38,7 +37,7 @@ public class CustomClassTest {
 		}
 		System.out.println("Employee AFTER SORT ORDRE");
 	
-		SortOrderComparator.sort(this.getClass(),employees);
+		SortOrderComparator.sort(employees,"name",SortTypes.DESC);
 		
 		for (Employee employee : employees) {
 			System.out.println(employee.getId()+" "+ employee.getName()+" "+employee.getSalary());
